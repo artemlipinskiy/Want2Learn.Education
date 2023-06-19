@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Want2Learn.BaseOperation", "Want2Learn.BaseOperation\Want2Learn.BaseOperation.csproj", "{17EEAEED-9EF4-433C-8DD2-AE1DC11CA784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Want2Learn.BaseOperation", "Want2Learn.BaseOperation\Want2Learn.BaseOperation.csproj", "{17EEAEED-9EF4-433C-8DD2-AE1DC11CA784}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Want2Learn.SeconProject", "Want2Learn.SeconProject\Want2Learn.SeconProject.csproj", "{FFE0F015-390E-46B0-9A01-15ADF1F8C5A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{17EEAEED-9EF4-433C-8DD2-AE1DC11CA784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17EEAEED-9EF4-433C-8DD2-AE1DC11CA784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17EEAEED-9EF4-433C-8DD2-AE1DC11CA784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFE0F015-390E-46B0-9A01-15ADF1F8C5A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFE0F015-390E-46B0-9A01-15ADF1F8C5A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFE0F015-390E-46B0-9A01-15ADF1F8C5A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFE0F015-390E-46B0-9A01-15ADF1F8C5A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
