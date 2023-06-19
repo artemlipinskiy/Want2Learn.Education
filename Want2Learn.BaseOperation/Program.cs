@@ -107,6 +107,7 @@ namespace Want2Learn.BaseOperation
 
             //char, object, bool
 
+            Console.WriteLine("TEST NEW COMMIT");
         }
     }
 }
