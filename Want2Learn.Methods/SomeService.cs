@@ -12,6 +12,18 @@ namespace Want2Learn.Methods
             return result;
         }
 
+        public int GetSum(string str1, string str2)
+        {
+            int result = str1.Length + str2.Length;
+            return result;
+        }
+
+        public int GetSum(int numberFirst, int numberSecond, int numberThird)
+        {
+            int result = numberFirst + numberSecond + numberThird;
+            return result;
+        }
+
         public void PrintWord5times(string word)
         {
             Console.WriteLine(word);
@@ -53,6 +65,14 @@ namespace Want2Learn.Methods
             int newAge = person.age + age;
             Person newPerson = new Person(person.name, newAge);
             return newPerson;
+        }
+
+        public static void PrintWord4times(string word)
+        {
+            Console.WriteLine(word);
+            Console.WriteLine(word);
+            Console.WriteLine(word);
+            Console.WriteLine(word);
         }
     }
 }

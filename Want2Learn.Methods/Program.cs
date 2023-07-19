@@ -18,6 +18,9 @@ namespace Want2Learn.Methods
             Console.WriteLine(resultFromGetSum);
             string hello = "Hello";
 
+            int n3 = 6;
+            resultFromGetSum = service.GetSum(n1, n2, n3);
+
             //Вызов метода без возвращаемого значением
             service.PrintWord5times(hello);
 
@@ -45,6 +48,10 @@ namespace Want2Learn.Methods
             Person person3 = service.AddAgeWithNewPerson(null, 2);
 
             service.Print(person3);
+
+            string word = "cat";
+            SomeService.PrintWord4times(word);
         }
+
     }
 }
