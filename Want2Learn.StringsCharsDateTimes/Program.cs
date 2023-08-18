@@ -94,6 +94,26 @@ namespace Want2Learn.StringsCharsDateTimes
             strFromCharArray = new string(charArray);
 
             char[] newCharArray = message.ToCharArray();
+
+            DateTime date = DateTime.Now;
+            Console.WriteLine(date);
+            string strDate = date.ToString("HH:mm");
+            Console.WriteLine(strDate);
+
+            DateTime notCurrentDate = new DateTime(1996,08,21);
+            Console.WriteLine(notCurrentDate);
+
+            DateTime notCurrentDate2 = new DateTime(1996, 08, 21, 12, 35, 47);
+            Console.WriteLine(notCurrentDate2);
+
+            notCurrentDate2 = notCurrentDate2.AddDays(-1);
+            Console.WriteLine(notCurrentDate2);
+
+            Console.WriteLine( notCurrentDate.Year);
+            DayOfWeek someDayOfWeek = notCurrentDate.DayOfWeek;
+            DayOfWeek custom = DayOfWeek.Monday;
+            Console.WriteLine(someDayOfWeek);
+
         }
     }
 }
