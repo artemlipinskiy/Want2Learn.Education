@@ -16,6 +16,9 @@ namespace Want2Learn.PullRequests
 
             Console.WriteLine("Today: ");
             Console.WriteLine(DateTime.Now);
+
+            Console.WriteLine(DateTime.Now.AddDays(-1));
+            Console.WriteLine();
         }
     }
 }
