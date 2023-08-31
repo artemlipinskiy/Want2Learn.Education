@@ -13,6 +13,9 @@ namespace Want2Learn.PullRequests
 
             Console.WriteLine(person.GetFullName());
             Console.WriteLine(person.GetBirthday());
+
+            Console.WriteLine("Today: ");
+            Console.WriteLine(DateTime.Now);
         }
     }
 }
