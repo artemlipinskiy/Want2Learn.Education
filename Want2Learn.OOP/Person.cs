@@ -8,7 +8,7 @@ namespace Want2Learn.OOP
     {
         private string firstName;
         private string lastName;
-        private int age;
+        private int? age;
 
         public Person()
         {
