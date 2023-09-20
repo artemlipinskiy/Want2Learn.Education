@@ -102,11 +102,37 @@ namespace Want2Learn.OOP
             Nullable<int> age = null;
             Console.WriteLine(age.HasValue);
             
-            age = age.Value + 5;
-            Console.WriteLine(age);
+            //age = age.Value + 5;
+            //Console.WriteLine(age);
 
             int? age2 = null;
             DateTime? dateTime = null;
+
+            Console.WriteLine(cat.Sleep());
+            Console.WriteLine(dog.Sleep());
+            List<ISleepable> sleepables = new List<ISleepable>();
+            sleepables.Add(dog);
+            sleepables.Add(cat);
+            foreach (var sleepable in sleepables)
+            {
+                Console.WriteLine(sleepable.Sleep());
+            }
+
+            Dictionary<string, string> defentionsDictionary = new Dictionary<string, string>();
+            defentionsDictionary.Add("Word", "Это набор символов");
+            defentionsDictionary.Add("Отрицательное число", "Это число со знаком минус (0)");
+            bool hasKeyword = defentionsDictionary.ContainsKey("word");
+            Console.WriteLine(hasKeyword);
+            hasKeyword = defentionsDictionary.ContainsKey("Word");
+            Console.WriteLine(hasKeyword);
+            foreach (KeyValuePair<string, string> dictionaryItem in defentionsDictionary)
+            {
+                Console.WriteLine(dictionaryItem.Key);
+                Console.WriteLine(dictionaryItem.Value);
+            }
+            Console.WriteLine(defentionsDictionary["Word"]);
+
+
         }
     }
 }

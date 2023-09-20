@@ -33,7 +33,7 @@ namespace Want2Learn.OOP
         }
         public int GetAge()
         {
-            return age;
+            return age.Value;
         }
 
         public string GetFirstName()
