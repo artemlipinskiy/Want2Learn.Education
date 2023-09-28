@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
+using Want2Learn.OOP.Animals;
 
 namespace Want2Learn.OOP
 {
@@ -132,7 +136,92 @@ namespace Want2Learn.OOP
             }
             Console.WriteLine(defentionsDictionary["Word"]);
 
+            var dogVar = new Dog();
+            var abc = dogVar.MakeSound();
 
+            //var newPerson = new PersonAutoProp();
+            //newPerson.Age = 15;
+            //newPerson.FirstName = "AA";
+            //newPerson.LastName = "qw";
+            var newPerson = new PersonAutoProp
+            {
+                LastName = "qw",
+                Age = 15,
+                FirstName = "AA"
+            };
+
+            newPerson = null;
+            var array = new int[0];
+            try
+            {
+                Console.WriteLine(array[0]);
+                
+                Console.WriteLine(newPerson.FirstName);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.WriteLine("Выход за границы массива");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+
+            }
+            var someText = "bla-bla-bla";
+            var path = "bla.txt";
+            using(StreamWriter file = File.CreateText(path))
+            {
+                file.Write(someText);
+            }
+
+            StreamWriter file2 = File.CreateText(path);
+            try
+            {
+                file2.Write(someText);
+            }
+            finally
+            {
+                file2.Dispose();
+            }
+            var text = string.Empty;
+            using(StreamReader sr = File.OpenText(path))
+            {
+                 text = sr.ReadToEnd();
+            }
+            Console.WriteLine(text);
+            newPerson = new PersonAutoProp
+            {
+                LastName = "qw",
+                Age = 15,
+                FirstName = "AA"
+            };
+            var newPerson2 = new PersonAutoProp
+            {
+                LastName = "ewew",
+                Age = 155,
+                FirstName = "asas"
+            };
+            var persons = new List<PersonAutoProp>();
+            persons.Add(newPerson);
+            persons.Add(newPerson2);
+            string json = JsonConvert.SerializeObject(persons, Formatting.Indented);
+            Console.WriteLine(json);
+            path = "persons.json";
+            using (StreamWriter file = File.CreateText(path))
+            {
+                file.Write(json);
+            }
+            //var type = typeof(List<PersonAutoProp>);
+            XmlSerializer formatter = new XmlSerializer(typeof(List<PersonAutoProp>));
+            using (FileStream fs = new FileStream("persons.xml",FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, persons);
+            }
+
+            Fish fish = new Fish();
         }
     }
 }

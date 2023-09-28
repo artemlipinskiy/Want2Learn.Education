@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Want2Learn.OOP
 {
-    class PersonAutoProp
+    public class PersonAutoProp
     {
-        public string LastName { get; private set; }
+        public string LastName { get; set; }
         public string FirstName { get; set; }
         public int Age { get; set; }
 
