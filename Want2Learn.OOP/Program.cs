@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 using Want2Learn.OOP.Animals;
+using Want2Learn.OOP.LINQ_Datas;
 
 namespace Want2Learn.OOP
 {
@@ -184,7 +186,10 @@ namespace Want2Learn.OOP
             }
             finally
             {
-                file2.Dispose();
+                if (file2 != null)
+                {
+                    file2.Dispose();
+                }
             }
             var text = string.Empty;
             using(StreamReader sr = File.OpenText(path))
@@ -222,6 +227,131 @@ namespace Want2Learn.OOP
             }
 
             Fish fish = new Fish();
+
+            var symptom1 = new Symptom
+            {
+                Id = 1,
+                Name = "Symptom 1",
+                Description = "Some description",
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+            };
+            var symptom2 = new Symptom
+            {
+                Id = 2,
+                Name = "Symptom 2",
+                Description = "Some description",
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+            };
+            var symptom3 = new Symptom
+            {
+                Id = 3,
+                Name = "Symptom 3",
+                Description = "Some description",
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+            };
+            var symptom4 = new Symptom
+            {
+                Id = 4,
+                Name = "Symptom 4",
+                Description = "Some description",
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+            };
+            var symptomsSet1 = new List<Symptom> { symptom1, symptom2 };
+            var symptomsSet2 = new List<Symptom> { symptom1, symptom3 };
+            var symptomsSet3 = new List<Symptom> { symptom3, symptom4 };
+            var disease = new Disease
+            {
+                Id = 1,
+                Name = "Disease 1",
+                Description = "Some disease description",
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+                Symptoms = symptomsSet1
+            }; 
+            var disease2 = new Disease
+            {
+                Id = 2,
+                Name = "Disease 2",
+                Description = "Some disease description",
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now,
+                Symptoms = symptomsSet2
+            };
+            var disease3 = new Disease
+            {
+                Id = 3,
+                Name = "Disease 3",
+                Description = "Some disease description",
+                CreatedOn = DateTime.Now.AddDays(1),
+                ModifiedOn = DateTime.Now,
+                Symptoms = symptomsSet3
+            };
+
+            var diseases = new List<Disease> { disease, disease2, disease3 };
+            var diseaseName = "Disease 2";
+            var resultDisease = new Disease();
+            foreach (var diseaseItem in diseases)
+            {
+                if (diseaseItem.Name == diseaseName)
+                {
+                    resultDisease = diseaseItem;
+                    break;
+                }
+            }
+
+            var first = diseases.FirstOrDefault(x => x.Name == diseaseName);
+            first = diseases.FirstOrDefault(x => x.Name == "Disease 23");
+            first = diseases.FirstOrDefault(x => x.Id == 2);
+            var intList = new List<int> { 1, 2, 34, 5 };
+            var one = intList.FirstOrDefault(x => x == 2);
+
+            var filtred = diseases.Where(x => x.CreatedOn.Date == DateTime.Now.Date).Where(x => x.Description != null).ToList();
+
+            var names = diseases.Select(x => x.Name).ToList();
+            var nameDescription = diseases.Select(x => new NameDescriptionsItem 
+            { 
+                Name = x.Name,
+                Description = x.Description
+            }).ToList();
+            //var test = diseases.Select(x => x.Symptoms).ToList();
+            var manys = diseases.SelectMany(x => x.Symptoms).ToList();
+            var maxAge = persons.Max(x => x.Age);
+
+            persons = persons.OrderBy(x => x.Age).ToList();
+            persons = persons.OrderByDescending(x => x.Age).ToList();
+
+            var symptomIds = manys.Select(x => x.Id).Distinct().ToList();
+            var anyResult = diseases.Any(x => x.Symptoms != null && x.Symptoms.Count > 3);
+            var allResult = diseases.All(x => x.Symptoms != null && x.Symptoms.Count > 3);
+            var manysSkip = manys.Skip(2).Take(3).ToList();
+
+            //Generic
+
+            var user1 = new User<int>();
+            var user2 = new User<double>();
+
+            var someCondition1 = true;
+
+            //if (someCondition1)
+            //{
+            //    throw new Exception();
+            //}
+            //if (someCondition1)
+            //{
+            //    throw new Exception("Some Message");
+            //}
+            //if (someCondition1)
+            //{
+            //    throw new CustomException("Some new prop");
+            //}
+            if (someCondition1)
+            {
+                throw new CustomException("Some new prop", "NEW EXCEPTION MESSAGE");
+            }
         }
     }
 }
