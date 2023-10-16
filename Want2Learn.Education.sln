@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Want2Learn.Algorithms", "Wa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Want2Learn.OOP", "Want2Learn.OOP\Want2Learn.OOP.csproj", "{16D8BF44-E457-47F1-AB65-D0ADC3B0B25F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Want2Learn.PullRequests", "Want2Learn.PullRequests\Want2Learn.PullRequests.csproj", "{5219F421-4EF1-407B-BDFD-7928401B1A66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Want2Learn.PullRequests", "Want2Learn.PullRequests\Want2Learn.PullRequests.csproj", "{5219F421-4EF1-407B-BDFD-7928401B1A66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Want2Learn.EF", "Want2Learn.EF\Want2Learn.EF.csproj", "{5F6E8E84-DC3E-47CE-92CA-40DB5B823E3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{5219F421-4EF1-407B-BDFD-7928401B1A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5219F421-4EF1-407B-BDFD-7928401B1A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5219F421-4EF1-407B-BDFD-7928401B1A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F6E8E84-DC3E-47CE-92CA-40DB5B823E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F6E8E84-DC3E-47CE-92CA-40DB5B823E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F6E8E84-DC3E-47CE-92CA-40DB5B823E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F6E8E84-DC3E-47CE-92CA-40DB5B823E3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
