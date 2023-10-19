@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Want2Learn.EF.Entities
 {
     public class Street
     {
-        public int StreetId { get; set; }
+        [Key]
+        public int StreetNumber { get; set; }
+
+        [Column("StreetName")]
+        [MaxLength(255)]
         public string Name { get; set; }
 
         public int CityId { get; set; }
