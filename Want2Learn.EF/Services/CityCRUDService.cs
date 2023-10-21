@@ -30,6 +30,7 @@ namespace Want2Learn.EF.Services
                     Population = cityCreate.Population
                 };
                 context.Add(city);
+                context.SaveChanges();
             }
         }
 
@@ -43,6 +44,7 @@ namespace Want2Learn.EF.Services
                     throw new Exception($"City with id ({id}) not found");
                 }
                 context.Remove(city);
+                context.SaveChanges();
             }
         }
 
@@ -93,6 +95,7 @@ namespace Want2Learn.EF.Services
                 }
                 city.Name = cityUpdate.Name;
                 city.Population = cityUpdate.Population;
+                context.SaveChanges();
             }
         }
     }
