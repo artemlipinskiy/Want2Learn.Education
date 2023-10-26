@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -48,22 +49,23 @@ namespace Want2Learn.EF.Services
             }
         }
 
-        public CityView Get(int id)
+        public CityDetailView Get(int id)
         {
             using (TestDbContext context = new TestDbContext())
             {
-                var city = context.Cities.FirstOrDefault(x => x.Id == id);
+                var city = context.Cities.Include(x => x.Streets).FirstOrDefault(x => x.Id == id);
 
                 if (city == null)
                 {
                     throw new Exception($"City with id ({id}) not found");
                 }
 
-                return new CityView 
+                return new CityDetailView
                 { 
                     Id = city.Id,
                     Name = city.Name,
-                    Population = city.Population
+                    Population = city.Population,
+                    Streets = city.Streets.Select(x => x.Name).ToList()
                 };
             }
         }
